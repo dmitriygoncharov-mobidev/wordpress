@@ -28,6 +28,8 @@ services:
       - WORDPRESS_DB_NAME=wordpress
     volumes:
       - wordpress:/var/www/html
+      - ./plugins:/var/www/html/wp-content/plugins
+      - ./themes:/var/www/html/wp-content/themes
     networks:
       - app-network
 
@@ -66,7 +68,8 @@ volumes:
   certbot-etc:
   wordpress:
   dbdata:
-
+  plugins:
+  themes:
 networks:
   app-network:
     # driver: bridge
